@@ -1,4 +1,8 @@
 .global {
+  background: #fff;
+  position: relative;
+  z-index: 3;
+  margin: auto auto 120px;
 
   @include e("navigation"){
     display: flex;
@@ -107,7 +111,24 @@
   }
 }
 
+.contact {
+  padding: 150px;
 
+}
+
+.page_footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  position: fixed;
+  z-index: -3;
+  bottom: 0;
+  width: 100%;
+
+  text-align: center;
+
+
+}
 
 
 

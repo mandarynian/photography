@@ -10,6 +10,11 @@ $(".two").click(function () {
     }, 1000);
 });
 
+$(".tree").click(function () {
+    $('html, body').animate({
+        scrollTop: $(".contact").offset().top
+    }, 1000);
+});
 
 
 
