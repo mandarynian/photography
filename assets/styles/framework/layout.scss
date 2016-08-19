@@ -4,7 +4,7 @@
   z-index: 3;
   margin: auto auto 120px;
 
-  @include e("navigation"){
+  @include e("navigation") {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -17,13 +17,13 @@
     }
     padding: 10px;
     font-family: 'Pacifico', cursive;
-    @include e("list"){
+    @include e("list") {
       margin-bottom: 0;
 
-      @include e("item"){
+      @include e("item") {
         margin-left: 20px;
 
-        @include m("first"){
+        @include m("first") {
           margin-left: 0;
         }
         a:link, a:visited {
@@ -32,15 +32,49 @@
         a:hover, a:active {
           color: #dd2300;
         }
+      }
+    }
 
+    &.page-one {
+      .one {
+        border-bottom: 4px solid #ff4500;
+      }
+      .two, .tree {
+        border-bottom: none;
+      }
+    }
+    &.page-two {
+
+      .two {
+        border-bottom : 4px solid #ff4500;
+      }
+      .one, .tree {
+        border-bottom: none;
+      }
+    }
+    &.page-tree {
+      .tree {
+        border-bottom: 4px solid #ff4500;
+      }
+      .one, .two {
+        border-bottom: none;
       }
     }
   }
+
+
+  .contact {
+    width: 100%;
+    height: 100hv;
+    margin-top: 60px;
+  }
+
+
 }
 
 
 .page_header {
-  min-height: 100vh;
+  min-height: 800px;
 
   background: {
     image: url(../images/img1.jpg);
@@ -55,13 +89,13 @@
     justify-content: center;
     color: antiquewhite;
     margin-top: 38px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: $font-page;
 
     @include e("item") {
 
       @include e("element") {
-        margin-top: 115px;
-        margin-bottom: 20px;
+        margin-top: 110px;
+        margin-bottom: 70px;
         h3 {
           text-align: center;
           small {
@@ -69,7 +103,7 @@
           }
         }
         @include m("first") {
-
+          margin-top: 60px;
         }
       }
     }
@@ -78,15 +112,17 @@
 
 .page_gallery {
   width: 100%;
+  min-height: 800px;
   height: auto;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 0;
 
-  @include e("images"){
+  @include e("images") {
     margin-top: 30px;
     display: flex;
     justify-content: center;
 
-    @include e("items"){
+    @include e("items") {
 
       figure {
         margin: 0 0 10px 0;
@@ -111,9 +147,43 @@
   }
 }
 
+
+
+
 .contact {
   padding: 150px;
 
+  background: {
+    image: url(../images/img20.jpg);
+    size: cover;
+
+  }
+
+  .contact-form {
+    position: relative;
+    max-width: 400px;
+    font-family: $font-page;
+    color: antiquewhite;
+
+    h3 {
+      color: #ff4500;
+    }
+
+    input, textarea, button {
+      opacity: 0.5;
+    }
+
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out;
+
+    &.is-showing {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.5 ease-in-out;
+    }
+
+  }
 }
 
 .page_footer {
@@ -133,38 +203,41 @@
 
 
 @media (min-width: 768px) and (max-width: 1199px) {
+  .global {
+    .contact {
+      margin-top: 50px;
+    }
+  }
+
   .page_header_content {
     @include e("item") {
       margin-top: 150px;
     }
     .page_header_content_item_element {
       margin-top: 250px;
-      @include m("first"){
-        margin-top: 0;
+      @include m("first") {
+        margin-top: -20px;
       }
     }
   }
 
   .page_gallery {
-    width: 100%;
-    height: 100vh;
 
     .page_gallery_images {
-      margin-top: 100px;
+      margin-top: 40px;
     }
 
   }
-
 }
 
 @media (min-width: 1200px) and (max-width: 1900px) {
   .page_header {
     .page_header_content {
-      @include e("item"){
+      @include e("item") {
         margin-top: 85px;
 
         .page_header_content_item_element-last {
-          margin-top: 200px;
+          margin-top: 300px;
         }
       }
     }
@@ -174,12 +247,13 @@
   }
 
   .page_gallery {
-    height: 100vh;
-    width: 100%;
+    min-height: auto;
 
-    @include e("images"){
+
+    @include e("images") {
       margin-top: 130px;
-      @include e("items"){
+      margin-bottom: 100px;
+      @include e("items") {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
@@ -191,10 +265,11 @@
 
 @media (min-width: 1901px) {
   .page_gallery {
-
-    @include e("images"){
+    min-height: auto;
+    @include e("images") {
       margin-top: 130px;
-      @include e("items"){
+      margin-bottom: 100px;
+      @include e("items") {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
