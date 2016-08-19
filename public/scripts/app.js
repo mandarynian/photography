@@ -28,7 +28,7 @@ $(window).scroll(function () {
        });
      }
 
-     if(where > 0 && where < $('.page_gallery').offset().top - ($(window).height() / 1.2)) {
+     if(where < $('.page_gallery').offset().top - ($(window).height() / 1.2)) {
        $('.global .global_navigation').each(function(){
          $('.global .global_navigation').addClass('page-one');
          $('.global .global_navigation').removeClass('page-two');

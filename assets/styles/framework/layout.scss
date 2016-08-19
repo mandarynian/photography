@@ -37,7 +37,7 @@
 
     &.page-one {
       .one {
-        border-bottom: 4px solid #ff4500;
+        border-bottom: 3px solid #ff4500;
       }
       .two, .tree {
         border-bottom: none;
@@ -46,7 +46,7 @@
     &.page-two {
 
       .two {
-        border-bottom : 4px solid #ff4500;
+        border-bottom : 3px solid #ff4500;
       }
       .one, .tree {
         border-bottom: none;
@@ -54,7 +54,7 @@
     }
     &.page-tree {
       .tree {
-        border-bottom: 4px solid #ff4500;
+        border-bottom: 3px solid #ff4500;
       }
       .one, .two {
         border-bottom: none;
@@ -76,6 +76,10 @@
 .page_header {
   min-height: 800px;
 
+  -webkit-box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
+
   background: {
     image: url(../images/img1.jpg);
     repeat: no-repeat;
@@ -87,7 +91,7 @@
     .page_header_content {
     display: flex;
     justify-content: center;
-    color: antiquewhite;
+    color: #faebd7;
     margin-top: 38px;
     font-family: $font-page;
 
@@ -136,7 +140,7 @@
           height: 115px;
 
           transform: scale(1);
-          transition: all 0.3s ease-in-out;
+          transition: all 0.8s ease-in-out;
 
           &:hover {
             transform: scale(1.1);
@@ -152,6 +156,9 @@
 
 .contact {
   padding: 150px;
+  -webkit-box-shadow: 0px -4px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px -4px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px -4px 3px 1px rgba(0,0,0,0.75);
 
   background: {
     image: url(../images/img20.jpg);
@@ -163,7 +170,7 @@
     position: relative;
     max-width: 400px;
     font-family: $font-page;
-    color: antiquewhite;
+    color: #faebd7;
 
     h3 {
       color: #ff4500;
@@ -175,12 +182,12 @@
 
     opacity: 0;
     transform: translateX(100px);
-    transition: all 0.8s ease-in-out;
+    transition: all 0.9s ease-in-out;
 
     &.is-showing {
       opacity: 1;
       transform: translateX(0);
-      transition: all 0.5 ease-in-out;
+      transition: all 0.8s ease-in-out;
     }
 
   }
@@ -237,7 +244,7 @@
         margin-top: 85px;
 
         .page_header_content_item_element-last {
-          margin-top: 300px;
+          margin-top: 250px;
         }
       }
     }
