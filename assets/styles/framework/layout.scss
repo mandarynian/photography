@@ -1,22 +1,16 @@
 .global {
-  background: #fff;
   position: relative;
+
+  background: {
+    image: url(../images/back-gallery.png);
+  }
+
   z-index: 3;
   margin: auto auto 120px;
 
   @include e("navigation") {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+    @extend %navigation-menu;
 
-    background: {
-      color: #242424;
-    }
-    padding: 10px;
-    font-family: 'Pacifico', cursive;
     @include e("list") {
       margin-bottom: 0;
 
@@ -64,36 +58,16 @@
 
 
   .contact {
-    width: 100%;
-    height: 100hv;
-    margin-top: 60px;
+    @extend %contact;
   }
-
 
 }
 
 
 .page_header {
-  min-height: 800px;
-
-  -webkit-box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
-  box-shadow: 0px 4px 3px 1px rgba(0,0,0,0.75);
-
-  background: {
-    image: url(../images/img1.jpg);
-    repeat: no-repeat;
-    size: cover;
-    position: 50%;
-    attachment: fixed;
-  }
-
+  @extend %page-header;
     .page_header_content {
-    display: flex;
-    justify-content: center;
-    color: #faebd7;
-    margin-top: 38px;
-    font-family: $font-page;
+    @extend %page-header-content;
 
     @include e("item") {
 
@@ -115,11 +89,7 @@
 }
 
 .page_gallery {
-  width: 100%;
-  min-height: 800px;
-  height: auto;
-  margin-top: 30px;
-  margin-bottom: 0;
+  @extend %page-gallery;
 
   @include e("images") {
     margin-top: 30px;
@@ -129,8 +99,8 @@
     @include e("items") {
 
       figure {
-        margin: 0 0 10px 0;
         position: relative;
+        margin: 0 0 10px 0;
         cursor: pointer;
         overflow: hidden;
 
@@ -194,17 +164,7 @@
 }
 
 .page_footer {
-  background: #000;
-  color: #fff;
-  padding: 40px 0;
-  position: fixed;
-  z-index: -3;
-  bottom: 0;
-  width: 100%;
-
-  text-align: center;
-
-
+  @extend %page-footer;
 }
 
 
@@ -255,7 +215,6 @@
 
   .page_gallery {
     min-height: auto;
-
 
     @include e("images") {
       margin-top: 130px;
