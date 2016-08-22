@@ -121,7 +121,24 @@
   }
 }
 
+.global .gif {
+  width: 100%;
+  height: 450px;
+  bottom: 0;
+  margin: 20px 0 0 0;
 
+  -webkit-box-shadow: inset 0px 0px 21px 8px rgba(0,0,0,0.8);
+  -moz-box-shadow: inset 0px 0px 21px 8px rgba(0,0,0,0.8);
+  box-shadow: inset 0px 0px 21px 8px rgba(0,0,0,0.8);
+
+  background: {
+    image: url(../images/gif1.gif);
+    size: cover;
+    position: 100%;
+    attachment: fixed;
+    position: 50%;
+  }
+}
 
 
 .contact {
